@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ffb6c1, #e0bbff);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+#login-screen,
+#content {
+  display: none;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+#login-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* giriş ekranı input ve buton */
+#login-screen input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1em;
+  margin: 10px 0;
+}
+#login-screen button {
+  background: #ff4d6d;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#login-screen button:hover {
+  background: #e63950;
+}
+
+#error {
+  color: yellow;
+  margin-top: 10px;
+}
+
+/* içerik */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.memory-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 20px;
+  width: 600px;           /* 📌 genişliği buradan arttırıyoruz */
+  max-width: 90%;         /* ekran küçükse taşmasın diye */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  position: relative;
+}
+
+/* zikzak yerleşim */
+.memory-card:nth-child(even) {
+  align-self: flex-start;
+  margin-left: 10%;
+}
+.memory-card:nth-child(odd) {
+  align-self: flex-end;
+  margin-right: 10%;
+}
+
+/* HOVER: kartı komple büyüt (foto kalitesine dokunmadan) */
+.memory-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 35px rgba(255,255,255,0.6);
+}
+
+/* FOTOĞRAF */
+.memory-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* NOT kısmı */
+.memory-card p {
+  background: rgba(0,0,0,0.25);
+  border-radius: 10px;
+  padding: 8px 15px;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 0.95em;
+  width: 90%; /* biraz daha geniş */
+  box-sizing: border-box;
+}
